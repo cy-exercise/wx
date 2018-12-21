@@ -5,7 +5,7 @@ use EasyWeChat\Factory;
 $config = [
     'app_id' => 'wx9c30cd0e6976f516',
     'secret' => '01e4421a63218f167ad78e0102f26cd8',
-
+    'token'   => 'cy.com',
     // 指定 API 调用返回结果的类型：array(default)/collection/object/raw/自定义类名
     'response_type' => 'array',
 
