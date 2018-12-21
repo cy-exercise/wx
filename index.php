@@ -3,7 +3,7 @@
 require 'vendor/autoload.php';
 
 use EasyWeChat\Factory;
-
+use EasyWeChat\Kernel\Messages\Message;
 
 $config = [
     'app_id' => 'wx9c30cd0e6976f516',
@@ -20,6 +20,7 @@ $app = Factory::officialAccount($config);
 $app->server->push(function ($message) {
     switch ($message['MsgType']) {
         case 'event':
+            file_put_contents('message.text', $message);
             return '收到事件消息';
             break;
         case 'text':
