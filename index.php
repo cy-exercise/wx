@@ -20,7 +20,7 @@ $app = Factory::officialAccount($config);
 $app->server->push(function ($message) {
     switch ($message['MsgType']) {
         case 'event':
-            file_put_contents('message.text', $message);
+            file_put_contents('/var/www/wx/message.text', json_encode($message));
             return '收到事件消息';
             break;
         case 'text':
